@@ -29,19 +29,19 @@ const projectGalleries = {
     url: "https://pepperball.com/",
     images: [
       {
-        src: "assets/pepperball-1.png",
+        src: "assets/optimized/pepperball-1.jpg",
         alt: "PepperBall homepage screenshot"
       },
       {
-        src: "assets/pepperball-2.png",
+        src: "assets/optimized/pepperball-2.jpg",
         alt: "PepperBall product page screenshot"
       },
       {
-        src: "assets/pepperball-3.png",
+        src: "assets/optimized/pepperball-3.jpg",
         alt: "PepperBall website screenshot"
       },
       {
-        src: "assets/pepperball-4.png",
+        src: "assets/optimized/pepperball-4.jpg",
         alt: "PepperBall mobile screenshot"
       }
     ]
@@ -52,19 +52,19 @@ const projectGalleries = {
     url: "https://fourvisions.com/",
     images: [
       {
-        src: "assets/fourvision-1.png",
+        src: "assets/optimized/fourvision-1.jpg",
         alt: "Four Visions homepage screenshot"
       },
       {
-        src: "assets/fourvision-2.png",
+        src: "assets/optimized/fourvision-2.jpg",
         alt: "Four Visions product page screenshot"
       },
       {
-        src: "assets/fourvision-3.png",
+        src: "assets/optimized/fourvision-3.jpg",
         alt: "Four Visions website screenshot"
       },
       {
-        src: "assets/fourvision-4.png",
+        src: "assets/optimized/fourvision-4.jpg",
         alt: "Four Visions mobile screenshot"
       }
     ]
@@ -75,19 +75,19 @@ const projectGalleries = {
     url: "https://www.bannersolutions.com/",
     images: [
       {
-        src: "assets/banner-1.png",
+        src: "assets/optimized/banner-1.jpg",
         alt: "Banner Solutions homepage screenshot"
       },
       {
-        src: "assets/banner-2.png",
+        src: "assets/optimized/banner-2.jpg",
         alt: "Banner Solutions product page screenshot"
       },
       {
-        src: "assets/banner-3.png",
+        src: "assets/optimized/banner-3.jpg",
         alt: "Banner Solutions website screenshot"
       },
       {
-        src: "assets/banner-4.png",
+        src: "assets/optimized/banner-4.jpg",
         alt: "Banner Solutions mobile screenshot"
       }
     ]
@@ -202,6 +202,7 @@ const closeResume = () => {
 const setGalleryImage = (gallery, index) => {
   if (!galleryImage || !galleryThumbs || !gallery.images[index]) return;
   const image = gallery.images[index];
+  galleryImage.decoding = "async";
   galleryImage.src = image.src;
   galleryImage.alt = image.alt;
   if (galleryCount) galleryCount.textContent = `${index + 1} / ${gallery.images.length}`;
@@ -232,8 +233,10 @@ const openProjectGallery = (key) => {
     button.className = "project-gallery-thumb";
     button.type = "button";
     button.setAttribute("aria-label", `Show image ${index + 1}`);
-    thumb.src = image.src;
+    thumb.src = image.thumb || image.src;
     thumb.alt = "";
+    thumb.loading = "lazy";
+    thumb.decoding = "async";
     button.append(thumb);
     button.addEventListener("click", () => setGalleryImage(gallery, index));
     galleryThumbs.append(button);

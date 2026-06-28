@@ -1939,11 +1939,13 @@ body.project-gallery-open {
     grid-template-columns: none;
     gap: 16px;
     margin: 24px -14px 0;
-    overflow-x: auto;
+    overflow-x: hidden;
     padding: 0 14px 12px;
     scroll-padding-inline: 14px;
-    scroll-snap-type: x mandatory;
+    scroll-snap-type: none;
     scrollbar-width: none;
+    touch-action: pan-y;
+    overscroll-behavior-x: contain;
     -webkit-overflow-scrolling: touch;
   }
 
@@ -1956,8 +1958,7 @@ body.project-gallery-open {
     grid-template-rows: auto 1fr;
     flex: 0 0 100%;
     min-width: 0;
-    scroll-snap-align: start;
-    scroll-snap-stop: always;
+    scroll-snap-align: none;
   }
 
   .project-grid .project-card:hover {
@@ -2094,6 +2095,10 @@ body.project-gallery-open {
 
   .resume-toolbar {
     padding-left: 16px;
+  }
+
+  body {
+    background-attachment: scroll;
   }
 }
 
