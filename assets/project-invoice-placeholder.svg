@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="620" viewBox="0 0 960 620" role="img" aria-labelledby="title desc">
+  <title id="title">PDF invoice automation preview</title>
+  <desc id="desc">A stylized invoice document preview for the PDF automation project.</desc>
+  <rect width="960" height="620" fill="#e8dfcf"/>
+  <g fill="none" stroke="#2d2923" stroke-width="6">
+    <path d="M180 72h488l112 112v364H180z" fill="#fffaf0"/>
+    <path d="M668 72v112h112" fill="#d66a2f"/>
+    <path d="M252 174h238"/>
+    <path d="M252 226h382"/>
+    <path d="M252 282h456"/>
+    <path d="M252 336h456"/>
+    <path d="M252 392h218"/>
+    <path d="M554 430h154v58H554z" fill="#7f8b52"/>
+  </g>
+  <g fill="#2d2923">
+    <rect x="252" y="118" width="166" height="24"/>
+    <rect x="252" y="452" width="184" height="12"/>
+    <rect x="252" y="482" width="132" height="12"/>
+  </g>
+</svg>
