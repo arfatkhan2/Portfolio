@@ -38,7 +38,7 @@ body {
   color: var(--fg);
   background-color: var(--bg);
   background-image: radial-gradient(circle, var(--dot) 1px, transparent 1.5px);
-  background-attachment: fixed;
+  background-attachment: scroll;
   background-size: 22px 22px;
   font-family: "Helvetica Neue", "Aptos", sans-serif;
   letter-spacing: 0;
@@ -714,7 +714,12 @@ h3 {
 
 .marmeto-logo {
   background: #000;
+  color: #fff;
+  font-family: "SFMono-Regular", "Menlo", "Consolas", monospace;
+  font-size: 0.95rem;
+  font-weight: 900;
   padding: 9px 12px;
+  text-transform: uppercase;
 }
 
 .work-meta p,
@@ -946,6 +951,40 @@ h3 {
   object-fit: contain;
 }
 
+.website-preview {
+  display: block;
+  min-height: 210px;
+  padding: 0;
+}
+
+.website-preview::before {
+  display: none;
+}
+
+.project-screenshot {
+  display: block;
+  width: 100%;
+  height: 210px;
+  object-fit: cover;
+  object-position: top center;
+}
+
+.project-brand-badge {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  z-index: 2;
+  border: 3px solid var(--line);
+  background: var(--card);
+  box-shadow: 4px 4px 0 var(--line);
+  color: var(--fg);
+  font-family: "SFMono-Regular", "Menlo", "Consolas", monospace;
+  font-size: 0.76rem;
+  font-weight: 900;
+  padding: 7px 9px;
+  text-transform: uppercase;
+}
+
 .analytics-preview {
   grid-template-columns: repeat(4, 1fr);
   align-items: end;
@@ -1167,6 +1206,10 @@ h3 {
   border: 4px solid var(--line);
   background: #fff;
   box-shadow: var(--shadow-sm);
+  color: #2d2923;
+  font-family: "SFMono-Regular", "Menlo", "Consolas", monospace;
+  font-size: 1.35rem;
+  font-weight: 900;
   padding: 9px;
 }
 
@@ -1209,6 +1252,10 @@ h3 {
   border: 4px solid var(--line);
   background: #fff;
   box-shadow: var(--shadow-sm);
+  color: #2d2923;
+  font-family: "SFMono-Regular", "Menlo", "Consolas", monospace;
+  font-size: 1.35rem;
+  font-weight: 900;
   padding: 14px;
 }
 
@@ -1382,6 +1429,10 @@ h3 {
   background: var(--soft);
   box-shadow: 3px 3px 0 var(--line);
   cursor: pointer;
+  color: var(--fg);
+  font-family: "SFMono-Regular", "Menlo", "Consolas", monospace;
+  font-size: 0.82rem;
+  font-weight: 900;
   padding: 0;
   overflow: hidden;
 }
@@ -1554,6 +1605,16 @@ h3 {
 body.resume-open,
 body.project-gallery-open {
   overflow: hidden;
+}
+
+#work,
+#projects,
+#skills,
+#education,
+#certifications,
+#contact {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 800px;
 }
 
 .scroll-progress {

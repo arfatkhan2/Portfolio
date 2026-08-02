@@ -8,9 +8,7 @@
       content="Arfat Khan is a Frontend Engineer and Certified BigCommerce Developer with 2 years of experience building enterprise-grade React, Next.js, and TypeScript web applications."
     />
     <title>Arfat Khan | Frontend Engineer &amp; Certified BigCommerce Developer</title>
-    <link rel="preconnect" href="https://cdn11.bigcommerce.com" />
-    <link rel="preconnect" href="https://images.bergerpaints.com" />
-    <link rel="preconnect" href="https://cdn.jsdelivr.net" />
+    <link rel="preload" as="image" href="assets/arfat-profile.jpg" fetchpriority="high" />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
@@ -171,9 +169,7 @@
           <article class="work-item reveal">
             <div class="work-meta">
               <div class="company-heading">
-                <span class="company-logo marmeto-logo">
-                  <img src="https://marmeto.com/cdn/shop/files/marmeto_2_63a401b8-1513-40a6-8ba3-cb42479e7a9d.png?v=1771220300&width=300" alt="Marmeto logo" loading="lazy" />
-                </span>
+                <span class="company-logo marmeto-logo" aria-label="Marmeto">Marmeto</span>
               </div>
               <p>Frontend Developer Intern</p>
               <time datetime="2024-05">May 2024 - Aug 2024</time>
@@ -205,11 +201,9 @@
 
           <div class="project-grid" data-project-carousel>
             <article class="project-card reveal" data-gallery-project="pepperball" tabindex="0" role="button" aria-label="Open PepperBall project gallery">
-              <div class="project-preview pepperball-preview">
-                <img class="pepperball-product" src="https://cdn11.bigcommerce.com/s-c19drjba2a/images/stencil/original/image-manager/tac-patrol.png?t=1781590018" alt="" loading="lazy" decoding="async" />
-                <span class="pepperball-logo-badge">
-                  <img src="https://cdn11.bigcommerce.com/s-c19drjba2a/stencil/85279f70-3234-013f-b83e-5a0f9c78ee9c/e/d7fa08d0-5420-013f-9cc7-627c2015fec3/img/foote-logo.png" alt="PepperBall logo" loading="lazy" decoding="async" />
-                </span>
+              <div class="project-preview website-preview pepperball-preview">
+                <img class="project-screenshot" src="assets/hq/pepperball-1.jpg" alt="PepperBall website homepage" width="1800" height="979" loading="lazy" decoding="async" />
+                <span class="project-brand-badge">PepperBall</span>
               </div>
               <div class="project-content">
                 <h3>PepperBall Website</h3>
@@ -224,11 +218,9 @@
             </article>
 
           <article class="project-card reveal" data-gallery-project="fourvisions" tabindex="0" role="button" aria-label="Open Four Visions project gallery">
-            <div class="project-preview fourvisions-preview">
-              <img class="fourvisions-product" src="https://cdn11.bigcommerce.com/s-dp5h1jupfy/images/stencil/original/image-manager/group-142-optimized.png?t=1768556827" alt="" loading="lazy" decoding="async" />
-              <span class="fourvisions-logo-badge">
-                <img src="https://cdn11.bigcommerce.com/s-dp5h1jupfy/images/stencil/original/site-logo_1775563956__29927.original.png" alt="Four Visions logo" loading="lazy" decoding="async" />
-              </span>
+            <div class="project-preview website-preview fourvisions-preview">
+              <img class="project-screenshot" src="assets/hq/fourvision-1.jpg" alt="Four Visions website homepage" width="1800" height="975" loading="lazy" decoding="async" />
+              <span class="project-brand-badge">Four Visions</span>
             </div>
             <div class="project-content">
               <h3>Four Visions Website</h3>
@@ -243,11 +235,9 @@
           </article>
 
           <article class="project-card reveal" data-gallery-project="bannersolutions" tabindex="0" role="button" aria-label="Open Banner Solutions project gallery">
-            <div class="project-preview bannersolutions-preview">
-              <img class="bannersolutions-product" src="https://api.bannersolutions.com/images/4D63E65CB2CCCE3F77134BD66EF285BB.jpg" alt="" loading="lazy" decoding="async" />
-              <span class="bannersolutions-logo-badge">
-                <img src="https://www.datocms-assets.com/165987/1755152582-banner_logo-svg-1.svg" alt="Banner Solutions logo" loading="lazy" decoding="async" />
-              </span>
+            <div class="project-preview website-preview bannersolutions-preview">
+              <img class="project-screenshot" src="assets/hq/banner-1.jpg" alt="Banner Solutions website homepage" width="1800" height="974" loading="lazy" decoding="async" />
+              <span class="project-brand-badge">Banner Solutions</span>
             </div>
             <div class="project-content">
               <h3>Banner Solutions Website</h3>
@@ -262,11 +252,12 @@
           </article>
 
           <article class="project-card reveal" data-gallery-project="berger" tabindex="0" role="button" aria-label="Open Berger Paints project gallery">
-            <div class="project-preview berger-preview">
-              <img class="berger-product" src="https://images.bergerpaints.com/2024-11/banner-desktop-six-min.png?VersionId=uxDChmouN6PbYxpfaRqwGhvUFXrMmaw8&amp;format=webp&amp;width=640&amp;quality=75" alt="" loading="lazy" decoding="async" />
-              <span class="berger-logo-badge">
-                <img src="https://images.bergerpaints.com/2026-04/navbigimg.png?VersionId=b80.eXgvjci3eKfun6EYkAaScxmG9uNl&amp;format=webp&amp;width=256&amp;quality=75" alt="Berger Paints logo" loading="lazy" decoding="async" />
-              </span>
+            <div class="project-preview analytics-preview" aria-hidden="true">
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+              <span></span>
             </div>
             <div class="project-content">
               <h3>Analytics Dashboard - Berger Paints</h3>
@@ -313,63 +304,63 @@
           <div>
             <h3>Frontend</h3>
             <ul>
-              <li><span class="skill-mark"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="" loading="lazy" /><span>R</span></span><span>React.js</span></li>
-              <li><span class="skill-mark"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg" alt="" loading="lazy" /><span>N</span></span><span>Next.js</span></li>
-              <li><span class="skill-mark"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" alt="" loading="lazy" /><span>TS</span></span><span>TypeScript</span></li>
-              <li><span class="skill-mark"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="" loading="lazy" /><span>JS</span></span><span>JavaScript (ES6+)</span></li>
-              <li><span class="skill-mark"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="" loading="lazy" /><span>H</span></span><span>HTML5</span></li>
-              <li><span class="skill-mark"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="" loading="lazy" /><span>C</span></span><span>CSS3</span></li>
-              <li><span class="skill-mark"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg" alt="" loading="lazy" /><span>TW</span></span><span>Tailwind CSS</span></li>
-              <li><span class="skill-mark"><img src="https://cdn.simpleicons.org/styledcomponents/DB7093" alt="" loading="lazy" /><span>SC</span></span><span>Styled Components</span></li>
+              <li><span class="skill-mark">R</span><span>React.js</span></li>
+              <li><span class="skill-mark">N</span><span>Next.js</span></li>
+              <li><span class="skill-mark">TS</span><span>TypeScript</span></li>
+              <li><span class="skill-mark">JS</span><span>JavaScript (ES6+)</span></li>
+              <li><span class="skill-mark">H</span><span>HTML5</span></li>
+              <li><span class="skill-mark">C</span><span>CSS3</span></li>
+              <li><span class="skill-mark">TW</span><span>Tailwind CSS</span></li>
+              <li><span class="skill-mark">SC</span><span>Styled Components</span></li>
             </ul>
           </div>
           <div>
             <h3>UI Libraries</h3>
             <ul>
-              <li><span class="skill-mark"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/materialui/materialui-original.svg" alt="" loading="lazy" /><span>M</span></span><span>Material-UI (MUI)</span></li>
-              <li><span class="skill-mark"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/antdesign/antdesign-original.svg" alt="" loading="lazy" /><span>AD</span></span><span>Ant Design</span></li>
-              <li><span class="skill-mark"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/storybook/storybook-original.svg" alt="" loading="lazy" /><span>SB</span></span><span>Storybook</span></li>
+              <li><span class="skill-mark">M</span><span>Material-UI (MUI)</span></li>
+              <li><span class="skill-mark">AD</span><span>Ant Design</span></li>
+              <li><span class="skill-mark">SB</span><span>Storybook</span></li>
             </ul>
           </div>
           <div>
             <h3>State Management</h3>
             <ul>
-              <li><span class="skill-mark"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redux/redux-original.svg" alt="" loading="lazy" /><span>RTK</span></span><span>Redux Toolkit</span></li>
-              <li><span class="skill-mark"><img src="https://raw.githubusercontent.com/pmndrs/zustand/main/docs/bear.jpg" alt="" loading="lazy" /><span>Z</span></span><span>Zustand</span></li>
-              <li><span class="skill-mark"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="" loading="lazy" /><span>CA</span></span><span>Context API</span></li>
-              <li><span class="skill-mark"><img src="https://cdn.simpleicons.org/reactquery/FF4154" alt="" loading="lazy" /><span>RQ</span></span><span>React Query</span></li>
+              <li><span class="skill-mark">RTK</span><span>Redux Toolkit</span></li>
+              <li><span class="skill-mark">Z</span><span>Zustand</span></li>
+              <li><span class="skill-mark">CA</span><span>Context API</span></li>
+              <li><span class="skill-mark">RQ</span><span>React Query</span></li>
             </ul>
           </div>
           <div>
             <h3>Performance</h3>
             <ul>
-              <li><span class="skill-mark"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/webpack/webpack-original.svg" alt="" loading="lazy" /><span>CS</span></span><span>Code Splitting</span></li>
-              <li><span class="skill-mark"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="" loading="lazy" /><span>LL</span></span><span>Lazy Loading</span></li>
-              <li><span class="skill-mark"><img src="https://cdn.simpleicons.org/pagespeedinsights/4285F4" alt="" loading="lazy" /><span>CWV</span></span><span>Core Web Vitals</span></li>
-              <li><span class="skill-mark"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg" alt="" loading="lazy" /><span>SSR</span></span><span>SSR</span></li>
-              <li><span class="skill-mark"><img src="https://cdn.simpleicons.org/googlesearchconsole/458CF5" alt="" loading="lazy" /><span>SEO</span></span><span>SEO Optimization</span></li>
+              <li><span class="skill-mark">CS</span><span>Code Splitting</span></li>
+              <li><span class="skill-mark">LL</span><span>Lazy Loading</span></li>
+              <li><span class="skill-mark">CWV</span><span>Core Web Vitals</span></li>
+              <li><span class="skill-mark">SSR</span><span>SSR</span></li>
+              <li><span class="skill-mark">SEO</span><span>SEO Optimization</span></li>
             </ul>
           </div>
           <div>
             <h3>Backend &amp; APIs</h3>
             <ul>
-              <li><span class="skill-mark"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="" loading="lazy" /><span>N</span></span><span>Node.js</span></li>
-              <li><span class="skill-mark"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg" alt="" loading="lazy" /><span>EX</span></span><span>Express.js</span></li>
-              <li><span class="skill-mark"><img src="https://cdn.simpleicons.org/openapiinitiative/6BA539" alt="" loading="lazy" /><span>API</span></span><span>RESTful APIs</span></li>
-              <li><span class="skill-mark"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/graphql/graphql-plain.svg" alt="" loading="lazy" /><span>GQL</span></span><span>GraphQL</span></li>
-              <li><span class="skill-mark"><img src="https://cdn.simpleicons.org/socketdotio/010101" alt="" loading="lazy" /><span>WS</span></span><span>WebSocket</span></li>
+              <li><span class="skill-mark">N</span><span>Node.js</span></li>
+              <li><span class="skill-mark">EX</span><span>Express.js</span></li>
+              <li><span class="skill-mark">API</span><span>RESTful APIs</span></li>
+              <li><span class="skill-mark">GQL</span><span>GraphQL</span></li>
+              <li><span class="skill-mark">WS</span><span>WebSocket</span></li>
             </ul>
           </div>
           <div>
             <h3>Tools</h3>
             <ul>
-              <li><span class="skill-mark"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="" loading="lazy" /><span>G</span></span><span>Git</span></li>
-              <li><span class="skill-mark"><img src="https://cdn.simpleicons.org/githubactions/2088FF" alt="" loading="lazy" /><span>GA</span></span><span>GitHub Actions</span></li>
-              <li><span class="skill-mark"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="" loading="lazy" /><span>D</span></span><span>Docker</span></li>
-              <li><span class="skill-mark"><img src="https://cdn.simpleicons.org/puppeteer/40B5A4" alt="" loading="lazy" /><span>P</span></span><span>Puppeteer</span></li>
-              <li><span class="skill-mark"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jest/jest-plain.svg" alt="" loading="lazy" /><span>J</span></span><span>Jest</span></li>
-              <li><span class="skill-mark"><img src="https://cdn.simpleicons.org/jira/0052CC" alt="" loading="lazy" /><span>JR</span></span><span>JIRA</span></li>
-              <li><span class="skill-mark"><img src="https://cdn.simpleicons.org/scrumalliance/009FDA" alt="" loading="lazy" /><span>AS</span></span><span>Agile/Scrum</span></li>
+              <li><span class="skill-mark">G</span><span>Git</span></li>
+              <li><span class="skill-mark">GA</span><span>GitHub Actions</span></li>
+              <li><span class="skill-mark">D</span><span>Docker</span></li>
+              <li><span class="skill-mark">P</span><span>Puppeteer</span></li>
+              <li><span class="skill-mark">J</span><span>Jest</span></li>
+              <li><span class="skill-mark">JR</span><span>JIRA</span></li>
+              <li><span class="skill-mark">AS</span><span>Agile/Scrum</span></li>
             </ul>
           </div>
         </div>
@@ -385,9 +376,7 @@
         <article class="project-card education-card reveal">
           <div class="project-content">
             <div class="education-heading">
-              <span class="education-logo">
-                <img src="https://www.cukashmir.ac.in/assets/CUK_New_Logo.png" alt="Central University of Kashmir logo" loading="lazy" />
-              </span>
+              <span class="education-logo" aria-label="Central University of Kashmir">CUK</span>
               <div>
                 <h3>Central University of Kashmir</h3>
                 <p>Bachelor of Technology in Computer Science and Engineering. Graduated September 2023.</p>
@@ -411,9 +400,7 @@
 
         <div class="certification-grid">
           <article class="certification-card reveal">
-            <span class="certification-logo">
-              <img src="https://cdn.simpleicons.org/bigcommerce/121118" alt="BigCommerce logo" loading="lazy" />
-            </span>
+            <span class="certification-logo" aria-label="BigCommerce">BC</span>
             <div>
               <h3>Certified BigCommerce Developer</h3>
               <p>Certified for BigCommerce storefront development, theme customization, catalog UI, checkout flows, and production e-commerce delivery.</p>
@@ -427,9 +414,7 @@
           </article>
 
           <article class="certification-card reveal">
-            <span class="certification-logo">
-              <img src="https://cdn.simpleicons.org/infosys/007CC3" alt="Infosys logo" loading="lazy" />
-            </span>
+            <span class="certification-logo" aria-label="Infosys">JS</span>
             <div>
               <h3>JavaScript Certification - Infosys</h3>
               <p>Certified JavaScript foundation covering ES6+ syntax, browser behavior, DOM workflows, and frontend implementation fundamentals.</p>
@@ -473,7 +458,7 @@
         </div>
         <div class="project-gallery-body">
           <figure class="project-gallery-stage">
-            <img data-gallery-image src="" alt="" />
+            <img data-gallery-image alt="" />
           </figure>
           <aside class="project-gallery-info">
             <h2 id="project-gallery-title" data-gallery-title>Project</h2>
@@ -522,11 +507,11 @@
             <span>Document viewer</span>
             <button class="resume-close" type="button" data-resume-close aria-label="Close resume">Close</button>
           </div>
-          <iframe class="resume-frame" src="arfat_khan_2k25.pdf#toolbar=0&navpanes=0" title="Arfat Khan resume"></iframe>
+          <iframe class="resume-frame" data-src="arfat_khan_2k25.pdf#toolbar=0&navpanes=0" title="Arfat Khan resume"></iframe>
         </div>
       </section>
     </div>
 
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
   </body>
 </html>

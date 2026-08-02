@@ -1,10 +1,10 @@
 const revealItems = document.querySelectorAll(".reveal");
 const countItems = document.querySelectorAll("[data-count]");
 const themeToggle = document.querySelector(".theme-toggle");
-const skillLogos = document.querySelectorAll(".skill-mark img");
 const resumeTriggers = document.querySelectorAll(".resume-trigger");
 const resumeModal = document.querySelector(".resume-modal");
 const resumeDialog = document.querySelector(".resume-book");
+const resumeFrame = document.querySelector(".resume-frame");
 const resumeCloseItems = document.querySelectorAll("[data-resume-close]");
 const projectCarousel = document.querySelector("[data-project-carousel]");
 const projectCards = projectCarousel ? Array.from(projectCarousel.querySelectorAll(".project-card")) : [];
@@ -29,19 +29,23 @@ const projectGalleries = {
     url: "https://pepperball.com/",
     images: [
       {
-        src: "assets/optimized/pepperball-1.jpg",
+        src: "assets/hq/pepperball-1.jpg",
+        thumb: "assets/optimized/thumbs/pepperball-1.jpg",
         alt: "PepperBall homepage screenshot"
       },
       {
-        src: "assets/optimized/pepperball-2.jpg",
+        src: "assets/hq/pepperball-2.jpg",
+        thumb: "assets/optimized/thumbs/pepperball-2.jpg",
         alt: "PepperBall product page screenshot"
       },
       {
-        src: "assets/optimized/pepperball-3.jpg",
+        src: "assets/hq/pepperball-3.jpg",
+        thumb: "assets/optimized/thumbs/pepperball-3.jpg",
         alt: "PepperBall website screenshot"
       },
       {
-        src: "assets/optimized/pepperball-4.jpg",
+        src: "assets/hq/pepperball-4.jpg",
+        thumb: "assets/optimized/thumbs/pepperball-4.jpg",
         alt: "PepperBall mobile screenshot"
       }
     ]
@@ -52,19 +56,23 @@ const projectGalleries = {
     url: "https://fourvisions.com/",
     images: [
       {
-        src: "assets/optimized/fourvision-1.jpg",
+        src: "assets/hq/fourvision-1.jpg",
+        thumb: "assets/optimized/thumbs/fourvision-1.jpg",
         alt: "Four Visions homepage screenshot"
       },
       {
-        src: "assets/optimized/fourvision-2.jpg",
+        src: "assets/hq/fourvision-2.jpg",
+        thumb: "assets/optimized/thumbs/fourvision-2.jpg",
         alt: "Four Visions product page screenshot"
       },
       {
-        src: "assets/optimized/fourvision-3.jpg",
+        src: "assets/hq/fourvision-3.jpg",
+        thumb: "assets/optimized/thumbs/fourvision-3.jpg",
         alt: "Four Visions website screenshot"
       },
       {
-        src: "assets/optimized/fourvision-4.jpg",
+        src: "assets/hq/fourvision-4.jpg",
+        thumb: "assets/optimized/thumbs/fourvision-4.jpg",
         alt: "Four Visions mobile screenshot"
       }
     ]
@@ -75,19 +83,23 @@ const projectGalleries = {
     url: "https://www.bannersolutions.com/",
     images: [
       {
-        src: "assets/optimized/banner-1.jpg",
+        src: "assets/hq/banner-1.jpg",
+        thumb: "assets/optimized/thumbs/banner-1.jpg",
         alt: "Banner Solutions homepage screenshot"
       },
       {
-        src: "assets/optimized/banner-2.jpg",
+        src: "assets/hq/banner-2.jpg",
+        thumb: "assets/optimized/thumbs/banner-2.jpg",
         alt: "Banner Solutions product page screenshot"
       },
       {
-        src: "assets/optimized/banner-3.jpg",
+        src: "assets/hq/banner-3.jpg",
+        thumb: "assets/optimized/thumbs/banner-3.jpg",
         alt: "Banner Solutions website screenshot"
       },
       {
-        src: "assets/optimized/banner-4.jpg",
+        src: "assets/hq/banner-4.jpg",
+        thumb: "assets/optimized/thumbs/banner-4.jpg",
         alt: "Banner Solutions mobile screenshot"
       }
     ]
@@ -172,12 +184,6 @@ revealItems.forEach((item, index) => {
 
 countItems.forEach((item) => countObserver.observe(item));
 
-skillLogos.forEach((logo) => {
-  logo.addEventListener("error", () => {
-    logo.remove();
-  });
-});
-
 if (themeToggle) {
   themeToggle.addEventListener("click", () => {
     document.body.classList.toggle("dark");
@@ -186,6 +192,9 @@ if (themeToggle) {
 
 const openResume = () => {
   if (!resumeModal || !resumeDialog) return;
+  if (resumeFrame && !resumeFrame.hasAttribute("src") && resumeFrame.dataset.src) {
+    resumeFrame.src = resumeFrame.dataset.src;
+  }
   resumeModal.classList.add("is-open");
   resumeModal.setAttribute("aria-hidden", "false");
   document.body.classList.add("resume-open");
@@ -229,15 +238,21 @@ const openProjectGallery = (key) => {
   galleryThumbs.replaceChildren();
   gallery.images.forEach((image, index) => {
     const button = document.createElement("button");
-    const thumb = document.createElement("img");
     button.className = "project-gallery-thumb";
     button.type = "button";
     button.setAttribute("aria-label", `Show image ${index + 1}`);
-    thumb.src = image.thumb || image.src;
-    thumb.alt = "";
-    thumb.loading = "lazy";
-    thumb.decoding = "async";
-    button.append(thumb);
+    if (image.thumb) {
+      const thumb = document.createElement("img");
+      thumb.src = image.thumb;
+      thumb.alt = "";
+      thumb.width = 180;
+      thumb.height = 98;
+      thumb.loading = "lazy";
+      thumb.decoding = "async";
+      button.append(thumb);
+    } else {
+      button.textContent = String(index + 1).padStart(2, "0");
+    }
     button.addEventListener("click", () => setGalleryImage(gallery, index));
     galleryThumbs.append(button);
   });
@@ -251,6 +266,7 @@ const closeProjectGallery = () => {
   galleryModal.classList.remove("is-open");
   galleryModal.setAttribute("aria-hidden", "true");
   document.body.classList.remove("project-gallery-open");
+  galleryImage?.removeAttribute("src");
 };
 
 const getProjectOffset = (card) => card.offsetLeft - projectCarousel.offsetLeft;
