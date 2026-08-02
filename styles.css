@@ -715,11 +715,13 @@ h3 {
 .marmeto-logo {
   background: #000;
   color: #fff;
-  font-family: "SFMono-Regular", "Menlo", "Consolas", monospace;
-  font-size: 0.95rem;
-  font-weight: 900;
-  padding: 9px 12px;
-  text-transform: uppercase;
+  padding: 9px 10px;
+}
+
+.glass-atlas-logo {
+  background: #080808;
+  color: #fff;
+  padding: 9px 10px;
 }
 
 .work-meta p,
@@ -1035,48 +1037,6 @@ h3 {
   animation: signalLine 3.2s ease-in-out infinite;
 }
 
-.document-preview {
-  padding: 28px;
-}
-
-.document-preview div {
-  position: relative;
-  z-index: 1;
-  width: min(260px, 76%);
-  height: 42px;
-  border: 3px solid var(--line);
-  background: var(--card);
-  animation: documentBuild 3.6s ease-in-out infinite;
-}
-
-.document-preview div:nth-child(1) {
-  height: 118px;
-}
-
-.document-preview div + div {
-  margin-top: 12px;
-}
-
-.document-preview div:nth-child(2) {
-  animation-delay: 160ms;
-}
-
-.document-preview div:nth-child(3) {
-  animation-delay: 320ms;
-}
-
-.document-preview span {
-  position: absolute;
-  right: 28px;
-  bottom: 28px;
-  z-index: 1;
-  width: 108px;
-  height: 38px;
-  border: 3px solid var(--line);
-  background: var(--accent);
-  animation: stampIn 3.6s ease-in-out infinite;
-}
-
 .project-content {
   display: grid;
   gap: 16px;
@@ -1129,8 +1089,8 @@ h3 {
 
 .skill-columns li {
   display: grid;
-  grid-template-columns: 38px minmax(0, 1fr);
-  gap: 10px;
+  grid-template-columns: 42px minmax(0, 1fr);
+  gap: 12px;
   align-items: center;
 }
 
@@ -1146,40 +1106,22 @@ h3 {
 
 .skill-mark {
   display: inline-grid;
-  width: 38px;
-  height: 34px;
+  width: 42px;
+  height: 38px;
   place-items: center;
   border: 3px solid var(--line);
   background: #fffaf0;
   box-shadow: 3px 3px 0 var(--line);
-  color: #2d2923;
-  font-family: "SFMono-Regular", "Menlo", "Consolas", monospace;
-  font-size: 0.72rem;
-  font-weight: 900;
-  line-height: 1;
-  text-transform: uppercase;
+  overflow: hidden;
+  padding: 5px;
   transition: transform 140ms ease, box-shadow 140ms ease;
 }
 
 .skill-mark img {
   display: block;
-  width: 22px;
-  height: 22px;
+  width: 24px;
+  height: 24px;
   object-fit: contain;
-}
-
-.skill-mark img + span {
-  display: none;
-}
-
-.skill-mark img:not([src]),
-.skill-mark img[src=""] {
-  display: none;
-}
-
-.skill-mark img:not([src]) + span,
-.skill-mark img[src=""] + span {
-  display: inline;
 }
 
 .skill-columns li:hover .skill-mark {
@@ -1210,13 +1152,14 @@ h3 {
   font-family: "SFMono-Regular", "Menlo", "Consolas", monospace;
   font-size: 1.35rem;
   font-weight: 900;
+  overflow: hidden;
   padding: 9px;
 }
 
 .education-logo img {
   display: block;
-  width: 100%;
-  height: 100%;
+  width: 180%;
+  height: 180%;
   object-fit: contain;
 }
 
@@ -1264,6 +1207,14 @@ h3 {
   width: 100%;
   height: 100%;
   object-fit: contain;
+}
+
+.bigcommerce-certification-logo {
+  background: #fff;
+}
+
+.javascript-certification-logo {
+  padding: 10px;
 }
 
 .certification-card h3 {
@@ -1794,32 +1745,6 @@ body.project-gallery-open {
 
   50% {
     transform: scaleX(1);
-  }
-}
-
-@keyframes documentBuild {
-  0%,
-  100% {
-    transform: translateX(0);
-  }
-
-  45%,
-  70% {
-    transform: translateX(10px);
-  }
-}
-
-@keyframes stampIn {
-  0%,
-  48% {
-    opacity: 0;
-    transform: translateY(12px);
-  }
-
-  64%,
-  100% {
-    opacity: 1;
-    transform: translateY(0);
   }
 }
 

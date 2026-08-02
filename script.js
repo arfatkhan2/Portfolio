@@ -119,14 +119,35 @@ const projectGalleries = {
       }
     ]
   },
-  invoice: {
-    title: "PDF Invoice Automation",
-    description: "Automated branded document generation pipeline for invoices and loan reports using Next.js SSR and Puppeteer.",
-    url: "",
+  zoonvale: {
+    title: "Zoon & Vale Travel Platform",
+    description: "Responsive Kashmir travel platform with package discovery, trip planning, booking enquiries, and mobile-first journeys.",
+    url: "https://zoonvale.in/",
     images: [
       {
-        src: "assets/project-invoice-placeholder.svg",
-        alt: "PDF invoice automation placeholder"
+        src: "assets/hq/zoon-vale-homepage.jpg",
+        thumb: "assets/optimized/thumbs/zoon-vale-homepage.jpg",
+        alt: "Zoon & Vale Kashmir travel website homepage"
+      },
+      {
+        src: "assets/hq/zoon-vale-winter-package.jpg",
+        thumb: "assets/optimized/thumbs/zoon-vale-winter-package.jpg",
+        alt: "Zoon & Vale Kashmir Winter Escape package page"
+      },
+      {
+        src: "assets/hq/zoon-vale-trip-planner.jpg",
+        thumb: "assets/optimized/thumbs/zoon-vale-trip-planner.jpg",
+        alt: "Zoon & Vale trip-planning enquiry flow"
+      },
+      {
+        src: "assets/hq/zoon-vale-mobile-navigation.jpg",
+        thumb: "assets/optimized/thumbs/zoon-vale-mobile-navigation.jpg",
+        alt: "Zoon & Vale mobile navigation menu"
+      },
+      {
+        src: "assets/hq/zoon-vale-mobile-blog.jpg",
+        thumb: "assets/optimized/thumbs/zoon-vale-mobile-blog.jpg",
+        alt: "Zoon & Vale mobile travel journal page"
       }
     ]
   }
