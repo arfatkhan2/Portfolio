@@ -334,18 +334,7 @@ brand?.addEventListener("click", () => {
   focusHashTarget(brand.hash);
 });
 
-const syncHeaderHeight = () => {
-  if (!siteHeader) return;
-  document.documentElement.style.setProperty("--header-height", `${siteHeader.offsetHeight}px`);
-};
-
-if ("ResizeObserver" in window && siteHeader) {
-  new ResizeObserver(syncHeaderHeight).observe(siteHeader);
-}
-syncHeaderHeight();
-
 window.addEventListener("resize", () => {
-  syncHeaderHeight();
   if (window.innerWidth > 960) closeNavigation();
 });
 

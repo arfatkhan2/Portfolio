@@ -3340,8 +3340,19 @@ body.nav-open {
   }
 
   .site-header {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
     z-index: 160;
+    height: var(--header-height);
+    min-height: var(--header-height);
+    max-height: var(--header-height);
     grid-template-columns: 1fr auto;
+  }
+
+  main {
+    padding-top: var(--header-height);
   }
 
   .menu-toggle {
@@ -3643,6 +3654,10 @@ body.nav-open {
     letter-spacing: -0.068em;
     line-height: 0.82;
     text-transform: uppercase;
+  }
+
+  .route-copy {
+    min-width: 0;
   }
 
   .route-copy small {
@@ -4258,7 +4273,28 @@ body.nav-open {
 
 @media (max-width: 480px) {
   .site-header {
+    gap: 10px;
     padding-inline: 14px;
+  }
+
+  .header-actions {
+    gap: 6px;
+  }
+
+  .theme-toggle {
+    width: 44px;
+    padding-inline: 0;
+  }
+
+  .theme-label {
+    display: none;
+  }
+
+  .menu-toggle {
+    min-width: 72px;
+    grid-template-columns: auto 16px;
+    gap: 8px;
+    padding-inline: 10px;
   }
 
   .mobile-menu-plate {
@@ -4276,29 +4312,42 @@ body.nav-open {
   }
 
   .route-manifest-head {
-    min-height: 52px;
-    padding-inline: 16px;
-    font-size: 0.58rem;
+    min-height: 46px;
+    gap: 10px;
+    padding: 8px 14px;
+    font-size: 0.55rem;
   }
 
   .route-availability {
-    max-width: 17ch;
+    max-width: 15ch;
+    gap: 6px;
+    font-size: 0.51rem;
   }
 
   .route-link {
-    min-height: 68px;
-    grid-template-columns: 30px minmax(0, 1fr) 24px;
-    gap: 9px;
-    padding-inline: 16px;
+    min-height: 58px;
+    grid-template-columns: 24px minmax(0, 1fr) 20px;
+    gap: 8px;
+    padding: 6px 14px;
+  }
+
+  .route-number {
+    font-size: 0.52rem;
   }
 
   .route-copy strong {
-    font-size: clamp(2rem, 10.8vw, 3.2rem);
+    font-size: clamp(1.72rem, 8.8vw, 2.25rem);
+    letter-spacing: -0.055em;
+    line-height: 0.88;
   }
 
   .route-copy small {
-    margin-top: 5px;
-    font-size: 0.55rem;
+    margin-top: 3px;
+    font-size: 0.48rem;
+  }
+
+  .route-link-arrow {
+    font-size: 1.25rem;
   }
 
   .route-manifest-utility {
@@ -4306,19 +4355,38 @@ body.nav-open {
   }
 
   .manifest-email {
-    min-height: 74px;
+    min-height: 60px;
     grid-row: auto;
   }
 
   .manifest-email,
   .manifest-resume,
   .manifest-socials {
-    padding-inline: 16px;
+    padding: 8px 14px;
+  }
+
+  .manifest-email strong {
+    margin-top: 3px;
+    font-size: 0.84rem;
+  }
+
+  .manifest-email-arrow {
+    font-size: 1.35rem;
+  }
+
+  .manifest-resume {
+    min-height: 46px;
+  }
+
+  .manifest-socials {
+    min-height: 44px;
+    flex-wrap: nowrap;
+    gap: 14px;
+    padding-bottom: max(8px, env(safe-area-inset-bottom));
   }
 
   .manifest-socials span {
-    width: 100%;
-    margin-left: 0;
+    display: none;
   }
 
   .hero h1 {
@@ -4479,6 +4547,37 @@ body.nav-open {
   }
 }
 
+@media (max-width: 360px) {
+  .route-manifest-head {
+    min-height: 44px;
+  }
+
+  .route-availability {
+    display: none;
+  }
+
+  .route-link {
+    min-height: 52px;
+  }
+
+  .route-copy strong {
+    font-size: clamp(1.6rem, 8.6vw, 1.95rem);
+  }
+
+  .route-copy small {
+    display: none;
+  }
+
+  .manifest-email {
+    min-height: 58px;
+  }
+
+  .manifest-email small,
+  .manifest-socials {
+    font-size: 0.53rem;
+  }
+}
+
 @media (max-width: 960px) and (max-height: 560px) and (orientation: landscape) {
   .mobile-menu-plate {
     width: min(calc(100vw - 16px), 900px);
@@ -4539,28 +4638,36 @@ body.nav-open {
   }
 
   .manifest-email {
-    min-height: 92px;
+    min-height: 70px;
     flex: 1;
     grid-row: auto;
   }
 
   .manifest-resume {
+    min-height: 44px;
     flex: 0 0 auto;
   }
 
   .manifest-socials {
-    display: grid;
+    display: flex;
+    min-height: 44px;
     flex: 0 0 auto;
-    gap: 0;
+    flex-wrap: nowrap;
+    gap: 14px;
+  }
+
+  .manifest-email,
+  .manifest-resume,
+  .manifest-socials {
+    padding-block: 6px;
   }
 
   .manifest-socials a {
-    min-height: 36px;
+    min-height: 44px;
   }
 
   .manifest-socials span {
-    width: auto;
-    margin-left: 0;
+    display: none;
   }
 }
 
