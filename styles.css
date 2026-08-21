@@ -3781,6 +3781,10 @@ body.nav-open {
     color: #172006;
   }
 
+  body.nav-open .brand-copy {
+    color: #f2efe8;
+  }
+
   body.nav-open .brand-copy small {
     color: #aeb3aa;
   }
@@ -3946,13 +3950,13 @@ body.nav-open {
 
   .brand-copy {
     display: block;
-    color: var(--signal-deep);
-    font-family: var(--serif);
-    font-size: clamp(1.35rem, 5.4vw, 1.65rem);
-    font-style: italic;
-    font-weight: 400;
-    letter-spacing: -0.055em;
-    line-height: 0.95;
+    color: var(--ink);
+    font-family: var(--display);
+    font-size: clamp(1.05rem, 4.4vw, 1.28rem);
+    font-style: normal;
+    font-weight: 750;
+    letter-spacing: -0.045em;
+    line-height: 1;
     white-space: nowrap;
   }
 
