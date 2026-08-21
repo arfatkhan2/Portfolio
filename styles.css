@@ -3935,6 +3935,31 @@ body.nav-open {
     --section-space: 92px;
   }
 
+  .brand {
+    min-width: 0;
+    gap: 0;
+  }
+
+  .brand-mark {
+    display: none;
+  }
+
+  .brand-copy {
+    display: block;
+    color: var(--signal-deep);
+    font-family: var(--serif);
+    font-size: clamp(1.35rem, 5.4vw, 1.65rem);
+    font-style: italic;
+    font-weight: 400;
+    letter-spacing: -0.055em;
+    line-height: 0.95;
+    white-space: nowrap;
+  }
+
+  .brand-copy small {
+    display: none;
+  }
+
   .header-link {
     display: none;
   }
@@ -4228,10 +4253,6 @@ body.nav-open {
 }
 
 @media (max-width: 480px) {
-  .brand-copy {
-    display: none;
-  }
-
   .site-header {
     padding-inline: 14px;
   }
