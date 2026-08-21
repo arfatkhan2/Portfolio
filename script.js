@@ -537,6 +537,26 @@ const setGalleryImage = (index, focusThumb = false) => {
   if (focusThumb) thumbs[normalizedIndex]?.focus();
 };
 
+const createArrowIcon = (direction) => {
+  const svgNamespace = "http://www.w3.org/2000/svg";
+  const icon = document.createElementNS(svgNamespace, "svg");
+  const path = document.createElementNS(svgNamespace, "path");
+  icon.setAttribute("class", `ui-arrow ui-arrow--${direction}`);
+  icon.setAttribute("viewBox", "0 0 16 16");
+  icon.setAttribute("width", "16");
+  icon.setAttribute("height", "16");
+  icon.setAttribute("fill", "none");
+  icon.setAttribute("stroke", "currentColor");
+  icon.setAttribute("stroke-width", "1.5");
+  icon.setAttribute("stroke-linecap", "square");
+  icon.setAttribute("stroke-linejoin", "miter");
+  icon.setAttribute("aria-hidden", "true");
+  icon.setAttribute("focusable", "false");
+  path.setAttribute("d", "M3 13 13 3M6 3h7v7");
+  icon.append(path);
+  return icon;
+};
+
 const initializeProjectReel = (root) => {
   const key = root.dataset.projectReel;
   const gallery = projectGalleries[key];
@@ -644,13 +664,13 @@ const initializeProjectReel = (root) => {
   previous.className = "project-reel-button";
   previous.type = "button";
   previous.setAttribute("aria-label", `Previous ${gallery.title} screenshot`);
-  previous.textContent = "←";
+  previous.append(createArrowIcon("left"));
 
   const next = document.createElement("button");
   next.className = "project-reel-button";
   next.type = "button";
   next.setAttribute("aria-label", `Next ${gallery.title} screenshot`);
-  next.textContent = "→";
+  next.append(createArrowIcon("right"));
 
   actions.append(previous, next, galleryButton);
   footer.append(meta, actions);
